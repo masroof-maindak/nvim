@@ -82,8 +82,8 @@ return {
 	},
 
 	{ -- MINI
-		{ 'echasnovski/mini.comment', version = false },
-		{ 'echasnovski/mini.pairs', version = false },
+		{ 'echasnovski/mini.comment', version = false, opts = {} },
+		{ 'echasnovski/mini.pairs', version = false, opts = {} },
 		{ -- UI
 			{
 				'echasnovski/mini.hipatterns',
