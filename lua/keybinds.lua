@@ -12,10 +12,13 @@ key("n", "<C-q>", ":qa<CR>", { noremap = true, silent = true })
 -- File opener with '-'
 key("n", "-", function() MiniFiles.open(vim.api.nvim_buf_get_name(0)) end)
 
+-- Delete current buffer
+vim.keymap.set("n", "<leader>bd", "<CMD>bd<CR>", { noremap = true })
+
 -- Mini.pick
--- key("n", "<leader>f", pick.builtin.files, { noremap = true })
--- key("n", "<leader>b", pick.builtin.buffers, { noremap = true })
--- key("n", "<leader>/", pick.builtin.grep, { noremap = true })
+key("n", "<leader>sf", "<CMD>Pick files<CR>", { noremap = true, desc = "Select file" })
+key("n", "<leader>sb", "<CMD>Pick buffers<CR>", { noremap = true, desc = "Select buffer" })
+key("n", "<leader>gs", "<CMD>Pick grep live<CR>", { noremap = true, desc = "Live grep across files" })
 
 -- Move to the beginning/end of the line
 key("n", "L", "$", { noremap = true, silent = true })
