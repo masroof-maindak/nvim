@@ -1,15 +1,8 @@
-require 'config.options'
-require 'config.keybinds'
-require 'config.bootstrap'
-require 'config.coloropts'
-require 'config.autocommands'
-
--- local bufremove = require('mini.bufremove')
--- bufremove.setup()
-
--- -- bc 'buffer close' variant of :bd deletes the buffer without closing the window
--- vim.api.nvim_create_user_command('BC', function() bufremove.delete(0, true) end, {})
--- vim.cmd('cnoreabbrev bc BC')
+require("options")
+require("keybinds")
+require("bootstrap")
+require("coloropts")
+require("autocommands")
 
 -- vim.api.nvim_create_autocmd('LspAttach', {
 --   group = vim.api.nvim_create_augroup('UserLspConfig', {}),

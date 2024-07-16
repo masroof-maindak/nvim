@@ -1,16 +1,8 @@
 -- add('github/copilot.vim')
 
 -- require('mini.ai').setup({})
--- require('mini.basics').setup({
--- 	options = {
--- 		extra_ui = true,
--- 	},
--- })
--- require('mini.bracketed').setup()
 -- require('mini.completion').setup()
 -- require('mini.diff').setup()
--- require('mini.jump').setup()
--- require('mini.jump2d').setup()
 -- require('mini.move').setup()
 -- require('mini.trailspace').setup()
 
@@ -50,7 +42,8 @@ return {
 				},
 				events = "VeryLazy",
 			},
-			{ 'echasnovski/mini.pairs',   version = false, opts = {}, event = "VeryLazy" },
+			{ 'echasnovski/mini.pairs', version = false, opts = {}, event = "VeryLazy" },
+			{ 'echasnovski/mini.jump', version = false, opts = {}, event = "VeryLazy" },
 		},
 		{ -- UI
 			{
