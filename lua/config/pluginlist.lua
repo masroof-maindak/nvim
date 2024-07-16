@@ -12,7 +12,6 @@
 -- require('mini.jump').setup()
 -- require('mini.jump2d').setup()
 -- require('mini.move').setup()
--- require('mini.surround').setup()
 -- require('mini.trailspace').setup()
 
 return {
@@ -23,67 +22,36 @@ return {
 		priority = 1000,
 	},
 
-	{ -- Keybind helper
-		"folke/which-key.nvim",
-		event = "VeryLazy",
-		init = function()
-			vim.o.timeout = true
-			vim.o.timeoutlen = 300
-		end,
-		opts = {}
-	},
-
-	{
-		"NvChad/nvim-colorizer.lua",
-		opts = {
-			filetypes = {
-				"*";
-				cmp_docs = { always_update = true },
-			},
-			user_default_options = {
-				names = false,
-			},
-		}
-	},
-
-	{ -- LSP
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
-		"neovim/nvim-lspconfig",
-		event = VeryLazy,
-	},
-
-	{ -- Syntax Highlighting
-		'nvim-treesitter/nvim-treesitter',
-		build = ':TSUpdate',
-		opts = {
-			ensure_installed = {
-				'lua', 'vimdoc', 'python', 'cpp', 'c', 'go', 'javascript', 'php', 'markdown', 'json', 'yaml',
-				'html', 'css', 'dockerfile'
-			},
-			auto_install = true,
-			highlight = { enable = true },
-			indent = { enable = true },
-			incremental_selection = {
-				enable = true,
-				keymaps = {
-					init_selection = "<A-o>",
-					node_incremental = "<A-o>",
-					node_decremental = "<A-i>"
-				}
-			}
-		},
-	},
-
-	{ -- Telescope
-		'nvim-telescope/telescope.nvim',
-		dependencies = { 'nvim-lua/plenary.nvim' },
-		event = VeryLazy,
-	},
-
 	{ -- MINI
-		{ 'echasnovski/mini.comment', version = false, opts = {} },
-		{ 'echasnovski/mini.pairs', version = false, opts = {} },
+		{ -- UTILITY
+			{
+				'echasnovski/mini.files',
+				version = false,
+				opts = {
+					content = { prefix = function() end },
+				},
+				event = "VeryLazy"
+			},
+			{
+				'echasnovski/mini.pick',
+				version = false,
+				opts = {
+
+				},
+			},
+		},
+		{ -- EDITING
+			{ 'echasnovski/mini.comment', version = false, opts = {}, event = "VeryLazy" },
+			{
+				'echasnovski/mini.surround',
+				version = false,
+				opts = {
+					highlight_duration = 1000,
+				},
+				events = "VeryLazy",
+			},
+			{ 'echasnovski/mini.pairs',   version = false, opts = {}, event = "VeryLazy" },
+		},
 		{ -- UI
 			{
 				'echasnovski/mini.hipatterns',
@@ -107,7 +75,51 @@ return {
 					set_vim_settings = false,
 				},
 			},
-		}
+		},
+	},
+
+	{ -- Keybind helper
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		init = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+		end,
+		opts = {}
+	},
+
+	{ -- Display colours
+		"NvChad/nvim-colorizer.lua",
+		opts = {
+			filetypes = {
+				"*",
+				cmp_docs = { always_update = true },
+			},
+			user_default_options = {
+				names = false,
+			},
+		},
+	},
+
+	{ -- LSP
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig",
+		event = VeryLazy,
+	},
+
+	{ -- Syntax Highlighting
+		'nvim-treesitter/nvim-treesitter',
+		build = ':TSUpdate',
+		opts = {
+			ensure_installed = {
+				'lua', 'vimdoc', 'python', 'cpp', 'c', 'go', 'javascript', 'php', 'markdown', 'json', 'yaml',
+				'html', 'css', 'dockerfile'
+			},
+			auto_install = true,
+			highlight = { enable = true },
+			indent = { enable = true },
+		},
 	},
 
 	{ -- Indentation lines
