@@ -33,6 +33,15 @@ return {
 
                 -- Make the on_attach function available globally
                 _G.lsp_on_attach = on_attach
+
+                -- LSP server setup
+                lspconfig.clangd.setup {
+                    on_attach = _G.lsp_on_attach,
+                }
+
+                lspconfig.gopls.setup {
+                    on_attach = _G.lsp_on_attach,
+                }
             end,
         },
         event = "VeryLazy",
