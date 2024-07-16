@@ -42,8 +42,8 @@ return {
 				},
 				events = "VeryLazy",
 			},
-			{ 'echasnovski/mini.pairs', version = false, opts = {}, event = "VeryLazy" },
-			{ 'echasnovski/mini.jump', version = false, opts = {}, event = "VeryLazy" },
+			{ 'echasnovski/mini.pairs',   version = false, opts = {}, event = "VeryLazy" },
+			{ 'echasnovski/mini.jump',    version = false, opts = {}, event = "VeryLazy" },
 		},
 		{ -- UI
 			{
@@ -58,7 +58,13 @@ return {
 					}
 				}
 			},
-			{ 'echasnovski/mini.starter', version = false, opts = {} },
+			{
+				'echasnovski/mini.starter',
+				version = false,
+				opts = {
+					footer = "\n      |\\      _,,,---,,_\nZZZzz /,`.-'`'    -.  ;-;;,_\n     |,4-  ) )-,_. ,\\ (  `'-'\n    '---''(_/--'  `-'\\_)",
+				}
+			},
 			{ 'echasnovski/mini.tabline', version = false, opts = {} },
 			{
 				'echasnovski/mini.statusline',
