@@ -12,7 +12,7 @@ vim.opt.exrc = true                 -- Use local .nvimrc if it exists
 vim.opt.secure = true               -- Disable unsafe commands in local .nvimrc
 vim.o.cursorline = true             -- Highlight current line
 vim.o.fillchars = 'eob: '           -- Hide ~ at end of buffers
-vim.o.laststatus = 3                -- Ensure global statusline is always visible 
+vim.o.laststatus = 3                -- Ensure global statusline is always visible
 vim.o.signcolumn = 'yes'			-- Always show sign column
 
 vim.o.wrap = false
