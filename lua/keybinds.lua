@@ -16,8 +16,8 @@ key("n", "-", function() MiniFiles.open(vim.api.nvim_buf_get_name(0)) end)
 vim.keymap.set("n", "<leader>bd", "<CMD>bd<CR>", { noremap = true })
 
 -- Mini.pick
-key("n", "<leader>sf", "<CMD>Pick files<CR>", { noremap = true, desc = "Select file" })
-key("n", "<leader>sb", "<CMD>Pick buffers<CR>", { noremap = true, desc = "Select buffer" })
+key("n", "<leader>pf", "<CMD>Pick files<CR>", { noremap = true, desc = "Select file" })
+key("n", "<leader>pb", "<CMD>Pick buffers<CR>", { noremap = true, desc = "Select buffer" })
 key("n", "<leader>gs", "<CMD>Pick grep live<CR>", { noremap = true, desc = "Live grep across files" })
 
 -- Move to the beginning/end of the line
