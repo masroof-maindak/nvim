@@ -9,6 +9,14 @@ key("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
 -- Quit all buffers with 'Ctrl-q'
 key("n", "<C-q>", ":qa<CR>", { noremap = true, silent = true })
 
+-- File opener with '-'
+key("n", "-", function() MiniFiles.open(vim.api.nvim_buf_get_name(0)) end)
+
+-- Mini.pick
+-- key("n", "<leader>f", pick.builtin.files, { noremap = true })
+-- key("n", "<leader>b", pick.builtin.buffers, { noremap = true })
+-- key("n", "<leader>/", pick.builtin.grep, { noremap = true })
+
 -- Move to the beginning/end of the line
 key("n", "L", "$", { noremap = true, silent = true })
 key("n", "H", "^", { noremap = true, silent = true }) 

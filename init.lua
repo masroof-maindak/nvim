@@ -1,13 +1,8 @@
 require 'config.options'
 require 'config.keybinds'
-require 'config.lazy-bootstrap'
+require 'config.bootstrap'
 require 'config.coloropts'
-
--- vim.keymap.set("n", "-", function() MiniFiles.open(vim.api.nvim_buf_get_name(0)) end)
-
--- vim.keymap.set("n", "<leader>f", pick.builtin.files, { noremap = true })
--- vim.keymap.set("n", "<leader>b", pick.builtin.buffers, { noremap = true })
--- vim.keymap.set("n", "<leader>/", pick.builtin.grep, { noremap = true })
+require 'config.autocommands'
 
 -- local bufremove = require('mini.bufremove')
 -- bufremove.setup()
