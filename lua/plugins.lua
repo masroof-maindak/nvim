@@ -19,31 +19,26 @@ return {
 			{
 				'echasnovski/mini.files',
 				version = false,
-				opts = {
-					content = { prefix = function() end },
-				},
+				opts = { content = { prefix = function() end }, }, -- remove icons
 				event = "VeryLazy"
 			},
-			{
-				'echasnovski/mini.pick',
-				version = false,
-				opts = {
-
-				},
-			},
+			{ 'echasnovski/mini.pick', version = false, },
 		},
 		{ -- EDITING
 			{ 'echasnovski/mini.comment', version = false, opts = {}, event = "VeryLazy" },
 			{
 				'echasnovski/mini.surround',
 				version = false,
-				opts = {
-					highlight_duration = 1000,
-				},
+				opts = { highlight_duration = 1000, },
 				events = "VeryLazy",
 			},
 			{ 'echasnovski/mini.pairs',   version = false, opts = {}, event = "VeryLazy" },
-			{ 'echasnovski/mini.jump',    version = false, opts = {}, event = "VeryLazy" },
+			{
+				'echasnovski/mini.jump',
+				version = false,
+				opts = { delay = { idle_stop = 5000, }, },
+				event = "VeryLazy"
+			},
 		},
 		{ -- UI
 			{
@@ -62,7 +57,8 @@ return {
 				'echasnovski/mini.starter',
 				version = false,
 				opts = {
-					footer = "\n      |\\      _,,,---,,_\nZZZzz /,`.-'`'    -.  ;-;;,_\n     |,4-  ) )-,_. ,\\ (  `'-'\n    '---''(_/--'  `-'\\_)",
+					footer =
+					"\n      |\\      _,,,---,,_\nZZZzz /,`.-'`'    -.  ;-;;,_\n     |,4-  ) )-,_. ,\\ (  `'-'\n    '---''(_/--'  `-'\\_)",
 				}
 			},
 			{ 'echasnovski/mini.tabline', version = false, opts = {} },
