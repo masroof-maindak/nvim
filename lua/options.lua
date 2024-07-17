@@ -48,4 +48,15 @@ vim.o.smartcase = true
 -- Line wrap
 vim.o.wrap = false
 
+-- Folding
+vim.o.foldenable = true
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+function _G.custom_fold_text()
+	return vim.fn.getline(vim.v.foldstart)
+end
+vim.o.foldtext = 'v:lua.custom_fold_text()'
+
 vim.o.updatetime = 300
