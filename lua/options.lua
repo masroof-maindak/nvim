@@ -1,9 +1,9 @@
 -- Set space as leader key
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Use system clipboard
-vim.o.clipboard = 'unnamedplus'
+vim.o.clipboard = "unnamedplus"
 
 -- Relative line numbers in gutter
 vim.o.relativenumber = true
@@ -18,7 +18,7 @@ vim.o.shiftwidth = 4
 vim.o.termguicolors = true
 
 -- Enable mouse support for all modes
-vim.o.mouse = 'a'
+vim.o.mouse = "a"
 
 -- Use local .nvimrc if it exists
 vim.opt.exrc = true
@@ -30,13 +30,13 @@ vim.opt.secure = true
 vim.o.cursorline = true
 
 -- Hide ~ at end of buffers
-vim.o.fillchars = 'eob: '
+vim.o.fillchars = "eob: "
 
 -- Ensure global statusline is always visible
 vim.o.laststatus = 3
 
 -- Always show sign column
-vim.o.signcolumn = 'yes'
+vim.o.signcolumn = "yes"
 
 -- Undo files
 vim.opt.undofile = true
@@ -53,10 +53,13 @@ vim.o.foldenable = true
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.foldmethod = "expr"
-vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+vim.o.fillchars = "fold: "
 function _G.custom_fold_text()
-	return vim.fn.getline(vim.v.foldstart)
+	local line = vim.fn.getline(vim.v.foldstart):gsub("^%s+", "")
+	local indent = vim.fn.indent(vim.v.foldstart)
+	return string.rep(" ", indent) .. line
 end
-vim.o.foldtext = 'v:lua.custom_fold_text()'
+vim.o.foldtext = "v:lua.custom_fold_text()"
 
 vim.o.updatetime = 300
