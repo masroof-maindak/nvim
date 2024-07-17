@@ -10,7 +10,8 @@ return {
                     todo  = { pattern = 'TODO', group = 'MiniHipatternsTodo' },
                     note  = { pattern = 'NOTE', group = 'MiniHipatternsNote' },
                 }
-            }
+            },
+			event = "VeryLazy",
         },
         {
             'echasnovski/mini.starter',
@@ -20,7 +21,7 @@ return {
                 "\n      |\\      _,,,---,,_\nZZZzz /,`.-'`'    -.  ;-;;,_\n     |,4-  ) )-,_. ,\\ (  `'-'\n    '---''(_/--'  `-'\\_)",
             }
         },
-        { 'echasnovski/mini.tabline', version = false, opts = {} },
+        { 'echasnovski/mini.tabline', version = false, opts = {}, event = "VeryLazy", },
         {
             'echasnovski/mini.statusline',
             version = false,
