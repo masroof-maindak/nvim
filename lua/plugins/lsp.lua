@@ -1,3 +1,12 @@
+local servers = {
+    "clangd",
+    "gopls",
+    "intelephense",
+    "tsserver",
+    "bashls",
+    "dockerls",
+}
+
 return {
     { -- LSP
         {
@@ -15,10 +24,7 @@ return {
         {
             "williamboman/mason-lspconfig.nvim",
             opts = {
-                ensure_installed = {
-                    "clangd",
-                    "gopls"
-                },
+                ensure_installed = servers,
             },
         },
         {
@@ -26,22 +32,15 @@ return {
             config = function()
                 local lspconfig = require('lspconfig')
 
-                -- Define a function for common on_attach settings
                 local on_attach = function(client, bufnr)
                     vim.api.nvim_exec_autocmds('LspAttach', { buffer = bufnr })
                 end
 
-                -- Make the on_attach function available globally
-                _G.lsp_on_attach = on_attach
-
-                -- LSP server setup
-                lspconfig.clangd.setup {
-                    on_attach = _G.lsp_on_attach,
-                }
-
-                lspconfig.gopls.setup {
-                    on_attach = _G.lsp_on_attach,
-                }
+                for _, lsp in ipairs(servers) do
+                    lspconfig[lsp].setup {
+                        on_attach = on_attach,
+                    }
+                end
             end,
         },
         event = "VeryLazy",
