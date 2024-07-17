@@ -13,7 +13,7 @@ key("n", "<C-q>", ":qa<CR>", { noremap = true, silent = true })
 key("n", "-", function() MiniFiles.open(vim.api.nvim_buf_get_name(0)) end)
 
 -- Delete current buffer
-vim.keymap.set("n", "<leader>bd", "<CMD>bd<CR>", { noremap = true })
+key("n", "<leader>bd", "<CMD>bd<CR>", { noremap = true })
 
 -- Mini.pick
 key("n", "<leader>pf", "<CMD>Pick files<CR>", { noremap = true, desc = "Select file" })
