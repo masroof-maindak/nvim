@@ -29,9 +29,6 @@ vim.opt.secure = true
 -- Highlight current line
 vim.o.cursorline = true
 
--- Hide ~ at end of buffers
-vim.o.fillchars = "eob: "
-
 -- Ensure global statusline is always visible
 vim.o.laststatus = 3
 
@@ -54,12 +51,14 @@ vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.foldmethod = "expr"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
-vim.o.fillchars = "fold: "
 function _G.custom_fold_text()
 	local line = vim.fn.getline(vim.v.foldstart):gsub("^%s+", "")
 	local indent = vim.fn.indent(vim.v.foldstart)
 	return string.rep(" ", indent) .. line
 end
 vim.o.foldtext = "v:lua.custom_fold_text()"
+
+-- Hide fold and and end-of-buffer default chars
+vim.o.fillchars = "eob: ,fold: "
 
 vim.o.updatetime = 300
