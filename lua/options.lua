@@ -7,6 +7,7 @@ vim.o.clipboard = "unnamedplus"
 
 -- Relative line numbers in gutter
 vim.o.relativenumber = true
+vim.o.number = true
 
 -- Number of spaces per tab
 vim.o.tabstop = 4
