@@ -5,7 +5,7 @@ return {
         opts = { content = { prefix = function() end }, },     -- remove icons
         event = "VeryLazy"
     },
-    { 'echasnovski/mini.pick', version = false, },
+    { 'echasnovski/mini.pick', version = false, opts = {}, event = "VeryLazy", },
     {
         'echasnovski/mini.completion',
         version = false,
