@@ -1,7 +1,6 @@
 local servers = {
 	"clangd",
 	"gopls",
-	"intelephense",
 	"tsserver",
 	"bashls",
 	"dockerls",
