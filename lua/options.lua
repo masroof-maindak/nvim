@@ -50,7 +50,7 @@ vim.o.wrap = false
 vim.o.foldenable = true
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
-vim.o.foldmethod = "expr"
+vim.o.foldmethod = "syntax"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 function _G.custom_fold_text()
 	local line = vim.fn.getline(vim.v.foldstart):gsub("^%s+", "")
