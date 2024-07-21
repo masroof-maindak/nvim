@@ -52,3 +52,6 @@ key('n', '<Esc>', ':noh<CR><Esc>', { noremap = true, silent = true })
 -- Remain in visual selection after shifting text
 key('v', '<', '<gv', { noremap = true, silent = true })
 key('v', '>', '>gv', { noremap = true, silent = true })
+
+-- Exit terminal with double Esc
+key('t', '<Esc><Esc>', '<C-\\><C-n>', { noremap = true, silent = true })
