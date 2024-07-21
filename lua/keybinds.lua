@@ -10,6 +10,9 @@ key("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
 key("n", "<C-q>", ":qa<CR>", { noremap = true, silent = true })
 key("n", "<leader>q", ":q<CR>", { noremap = true, silent = true })
 
+-- Write easily
+key("n", "<leader>w", ":w<CR>", { noremap = true, silent = true })
+
 -- File opener with '-'
 key("n", "-", function()
 	MiniFiles.open(vim.api.nvim_buf_get_name(0))
