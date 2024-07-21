@@ -14,7 +14,7 @@ return {
 			},
 		},
 		opts = {
-			formatters_by_ft = {
+			stop_after_first = {
 				c = { { "clang-format" } },
 				["c++"] = { { "clang-format" } },
 				javascript = { { "biome" } },
@@ -35,11 +35,5 @@ return {
 		init = function()
 			vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 		end,
-	},
-	{ -- Automatically install formatters
-		"zapling/mason-conform.nvim",
-		opts = {},
-		after = "conform.nvim",
-		event = "VeryLazy",
 	},
 }
