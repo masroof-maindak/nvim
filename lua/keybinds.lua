@@ -48,3 +48,7 @@ key('n', '<S-Tab>', ':bp<CR>', { noremap = true, silent = true })
 
 -- Clear search highlights with 'Esc'
 key('n', '<Esc>', ':noh<CR><Esc>', { noremap = true, silent = true })
+
+-- Remain in visual selection after shifting text
+key('v', '<', '<gv', { noremap = true, silent = true })
+key('v', '>', '>gv', { noremap = true, silent = true })
