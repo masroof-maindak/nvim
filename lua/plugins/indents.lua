@@ -1,12 +1,12 @@
 return {
 	{ -- Indentation lines
 		"lukas-reineke/indent-blankline.nvim",
-		main = 'ibl',
+		main = "ibl",
 		opts = {
 			indent = {
-				char = '┊',
+				char = "┊",
 				smart_indent_cap = true,
-			}
+			},
 		},
 	},
 }
