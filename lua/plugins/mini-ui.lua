@@ -6,6 +6,7 @@ return {
 			opts = {
 				highlighters = {
 					fixme = { pattern = "FIXME", group = "MiniHipatternsFixme" },
+					check = { pattern = "CHECK", group = "MiniHipatternsHack" },
 					hack = { pattern = "HACK", group = "MiniHipatternsHack" },
 					todo = { pattern = "TODO", group = "MiniHipatternsTodo" },
 					note = { pattern = "NOTE", group = "MiniHipatternsNote" },
