@@ -34,7 +34,7 @@ vim.o.cursorline = true
 vim.o.laststatus = 3
 
 -- Always show sign column
-vim.o.signcolumn = "yes"
+vim.o.signcolumn = "auto"
 
 -- Undo files
 vim.opt.undofile = true
