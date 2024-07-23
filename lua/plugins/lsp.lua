@@ -4,12 +4,47 @@ local servers = {
 	"tsserver",
 	"bashls",
 	"dockerls",
-	"phpactor",
+	-- "phpactor",
+	"intelephense",
+	"lua_ls"
+}
+
+local on_attach = function(client, bufnr)
+	vim.api.nvim_exec_autocmds("LspAttach", { buffer = bufnr })
+end
+
+local handlers = {
+	-- Generic settings for all servers
+	function(server_name)
+		require("lspconfig")[server_name].setup {
+			on_attach = on_attach,
+		}
+	end,
+
+	-- Additional overrides for specific servers
+	["phpactor"] = function()
+		local lspconfig = require("lspconfig")
+		lspconfig.phpactor.setup {
+			root_dir = lspconfig.util.root_pattern("composer.json", ".git"),
+		}
+	end,
+
+	["lua_ls"] = function()
+		local lspconfig = require("lspconfig")
+		lspconfig.lua_ls.setup {
+			settings = {
+				Lua = {
+					telemetry = { enable = false },
+					diagnostics = { globals = { "vim" } },
+				},
+			},
+		}
+	end,
 }
 
 return {
-	{ -- LSP
-		{
+	{ -- LSP configuration
+		{ -- Download & Install
 			"williamboman/mason.nvim",
 			opts = {
 				ui = {
@@ -21,29 +56,15 @@ return {
 				},
 			},
 		},
-		{
+		{ -- Set up using hereinafter mentioned
 			"williamboman/mason-lspconfig.nvim",
 			opts = {
 				ensure_installed = servers,
-				automatic_installation = true,
+				handlers = handlers,
 			},
 		},
-		{
-			"neovim/nvim-lspconfig",
-			config = function()
-				local lspconfig = require("lspconfig")
-
-				local on_attach = function(client, bufnr)
-					vim.api.nvim_exec_autocmds("LspAttach", { buffer = bufnr })
-				end
-
-				for _, lsp in ipairs(servers) do
-					lspconfig[lsp].setup({
-						on_attach = on_attach,
-					})
-				end
-			end,
-		},
+		-- Start LSP servers (wrapper over vim.lsp.start_client?)
+		{ "neovim/nvim-lspconfig", event = "BufReadPre" },
 		event = "VeryLazy",
 	},
 }
