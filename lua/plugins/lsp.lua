@@ -4,6 +4,7 @@ local servers = {
 	"tsserver",
 	"bashls",
 	"dockerls",
+	"phpactor",
 }
 
 return {
@@ -24,6 +25,7 @@ return {
 			"williamboman/mason-lspconfig.nvim",
 			opts = {
 				ensure_installed = servers,
+				automatic_installation = true,
 			},
 		},
 		{

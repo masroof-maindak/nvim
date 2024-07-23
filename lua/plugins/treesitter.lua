@@ -1,6 +1,7 @@
 return {
 	{ -- Syntax Highlighting
 		"nvim-treesitter/nvim-treesitter",
+		event = { "BufReadPost", "BufNewFile" },
 		build = ":TSUpdate",
 		opts = {
 			ensure_installed = {
@@ -15,7 +16,6 @@ return {
 				"markdown",
 				"json",
 				"yaml",
-				"html",
 				"css",
 				"dockerfile",
 			},

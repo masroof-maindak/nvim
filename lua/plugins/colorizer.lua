@@ -1,6 +1,7 @@
 return {
 	{ -- Display colours
 		"NvChad/nvim-colorizer.lua",
+		event = "User FilePost",
 		opts = {
 			filetypes = {
 				"*",
