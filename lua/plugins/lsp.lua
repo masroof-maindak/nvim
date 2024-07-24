@@ -4,7 +4,6 @@ local servers = {
 	"tsserver",
 	"bashls",
 	"dockerls",
-	-- "phpactor",
 	"intelephense",
 	"lua_ls"
 }
@@ -18,14 +17,6 @@ local handlers = {
 	function(server_name)
 		require("lspconfig")[server_name].setup {
 			on_attach = on_attach,
-		}
-	end,
-
-	-- Additional overrides for specific servers
-	["phpactor"] = function()
-		local lspconfig = require("lspconfig")
-		lspconfig.phpactor.setup {
-			root_dir = lspconfig.util.root_pattern("composer.json", ".git"),
 		}
 	end,
 
