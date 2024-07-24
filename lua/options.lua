@@ -41,6 +41,7 @@ vim.opt.undofile = true
 
 -- Case insensitive searching UNLESS /C or capital in search
 vim.o.ignorecase = true
+vim.o.infercase = true
 vim.o.smartcase = true
 
 -- Line wrap
@@ -63,3 +64,11 @@ vim.o.foldtext = "v:lua.custom_fold_text()"
 vim.o.fillchars = "eob: ,fold: "
 
 vim.o.updatetime = 300
+
+-- Show hidden characters
+vim.opt.listchars = {
+	tab = '∙∙',  -- Display tabs as a bullet point (•)
+	trail = '~', -- Display trailing spaces as '.'
+}
+vim.opt.list = true
+
