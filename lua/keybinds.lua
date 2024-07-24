@@ -1,25 +1,25 @@
 local key = vim.keymap.set
 
 -- Exit insert mode w/ 'jk'
-key("i", "jk", "<Esc>", { noremap = true, silent = true })
+key("i", "jk", "<Esc>", { noremap = true, silent = true, desc = "Exit insert mode" })
 
 -- Save with 'Ctrl-s'
-key("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
+key("n", "<C-s>", ":w<CR>", { noremap = true, silent = true, desc = ":w" })
 
 -- Quit/Quit All
-key("n", "<C-q>", ":qa<CR>", { noremap = true, silent = true })
-key("n", "<leader>q", ":q<CR>", { noremap = true, silent = true })
+key("n", "<C-q>", ":qa<CR>", { noremap = true, silent = true, desc = ":qa" })
+key("n", "<leader>q", ":q<CR>", { noremap = true, silent = true, desc = ":q" })
 
 -- Write easily
-key("n", "<leader>w", ":w<CR>", { noremap = true, silent = true })
+key("n", "<leader>w", ":w<CR>", { noremap = true, silent = true, desc = ":w" })
 
 -- File opener with '-'
 key("n", "-", function()
 	MiniFiles.open(vim.api.nvim_buf_get_name(0))
-end)
+end, { desc = "Open file picker" })
 
 -- Delete current buffer
-key("n", "<leader>bd", "<CMD>bd<CR>", { noremap = true })
+key("n", "<leader>bd", "<CMD>bd<CR>", { noremap = true, desc = "Delete buffer" })
 
 -- Mini.pick
 key("n", "<leader>pf", "<CMD>Pick files<CR>", { noremap = true, desc = "Select file" })
@@ -62,5 +62,5 @@ key("n", "<Esc>", ":noh<CR><Esc>", { noremap = true, silent = true })
 key("v", "<", "<gv", { noremap = true, silent = true })
 key("v", ">", ">gv", { noremap = true, silent = true })
 
--- Exit terminal with double Esc
-key("t", "<Esc><Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
+-- Exit terminal insert mode with double Esc
+key("t", "<Esc><Esc>", "<C-\\><C-n>", { noremap = true, silent = true, desc = "Exit insert mode in terminal" })
