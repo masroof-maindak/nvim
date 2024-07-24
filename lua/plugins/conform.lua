@@ -7,20 +7,22 @@ return {
 			{
 				"<leader>f",
 				function()
-					require("conform").format({ async = true, lsp_format = "fallback" })
+					require("conform").format({ async = true, lsp_format = "fallback", stop_after_first = true})
 				end,
 				mode = "",
 				desc = "Format buffer",
 			},
 		},
 		opts = {
-			stop_after_first = {
-				c = { { "clang-format" } },
-				["c++"] = { { "clang-format" } },
-				javascript = { { "biome" } },
-				lua = { { "stylua" } },
-				php = { { "pretty-php" } },
-				bash = { { "shfmt" } },
+			formatters_by_ft = {
+				c = { "clang-format" },
+				["c++"] = { "clang-format" },
+				javascript = { "prettierd", "prettier" },
+				typescript = { "prettierd", "prettier" },
+				json = { "prettierd", "prettier" },
+				lua = { "stylua" },
+				php = { "pretty-php" },
+				bash = { "shfmt" },
 			},
 
 			format_on_save = nil,
@@ -35,5 +37,11 @@ return {
 		init = function()
 			vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 		end,
+	},
+	{ -- Automatically install formatters
+		"zapling/mason-conform.nvim",
+		opts = {},
+		after = "conform.nvim",
+		event = "VeryLazy",
 	},
 }
