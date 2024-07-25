@@ -72,3 +72,5 @@ vim.opt.listchars = {
 }
 vim.opt.list = true
 
+-- Disable cursor line highlight
+vim.o.cursorline = false
