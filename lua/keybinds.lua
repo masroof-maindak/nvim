@@ -37,7 +37,7 @@ key("i", "<Tab>", [[pumvisible() ? "\<C-n>" : "\<Tab>"]], { expr = true })
 key("i", "<S-Tab>", [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]], { expr = true })
 
 -- Approve completion item
-key("i", "<leader>a", [[pumvisible() ? "\<C-y>" : "\<CR>"]], { expr = true })
+key("i", "<C-f>", [[pumvisible() ? "\<C-y>" : "\<C-f>"]], { expr = true })
 
 -- Window navigation with 'Ctrl-hjkl'
 key("n", "<C-h>", "<C-w>h", { noremap = true, silent = true })
