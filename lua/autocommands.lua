@@ -30,3 +30,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.bo[event.buf].omnifunc = 'v:lua.MiniCompletion.completefunc_lsp'
     end,
 })
+
+
+-- Disable Linenumbers in Terminals
+vim.api.nvim_create_autocmd("TermEnter", {
+    callback = function()
+        vim.o.number = false
+        vim.o.relativenumber = false
+    end
+})
