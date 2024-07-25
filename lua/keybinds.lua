@@ -15,7 +15,9 @@ key("n", "<leader>w", ":w<CR>", { noremap = true, silent = true, desc = ":w" })
 
 -- File opener with '-'
 key("n", "-", function()
-	MiniFiles.open(vim.api.nvim_buf_get_name(0))
+	-- Starts file explorer at buffer if in one, else, directory from where nvim was opened
+	local path = vim.bo.buftype ~= "nofile" and vim.api.nvim_buf_get_name(0) or vim.uv.cwd()
+	MiniFiles.open(path)
 end, { desc = "Open file picker" })
 
 -- Delete current buffer

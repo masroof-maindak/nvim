@@ -4,7 +4,7 @@ return {
 			"echasnovski/mini.hipatterns",
 			version = false,
 			config = function()
-				local hipatterns = require('mini.hipatterns')
+				local hipatterns = require("mini.hipatterns")
 				hipatterns.setup({
 					highlighters = {
 						fixme = { pattern = "FIXME", group = "MiniHipatternsFixme" },
@@ -23,6 +23,9 @@ return {
 			version = false,
 			opts = {
 				footer = "\n      |\\      _,,,---,,_\nZZZzz /,`.-'`'    -.  ;-;;,_\n     |,4-  ) )-,_. ,\\ (  `'-'\n    '---''(_/--'  `-'\\_)",
+
+				-- Default values with exception of '-' as I use it to open mini.files.
+				query_updaters = "abcdefghijklmnopqrstuvwxyz0123456789_.",
 			},
 		},
 		{ "echasnovski/mini.tabline", version = false, opts = {}, event = "VeryLazy" },
@@ -39,7 +42,9 @@ return {
 			version = false,
 			opts = {
 				draw = {
-					animation = function() return 0 end,
+					animation = function()
+						return 0
+					end,
 				},
 				mappings = {
 					-- Select in visual mode
@@ -51,7 +56,7 @@ return {
 					goto_bottom = "]i",
 				},
 				options = {
-					try_as_border = true
+					try_as_border = true,
 				},
 			},
 		},
