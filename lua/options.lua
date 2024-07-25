@@ -67,8 +67,8 @@ vim.o.updatetime = 300
 
 -- Show hidden characters
 vim.opt.listchars = {
-	tab = '∙∙',  -- Display tabs as a bullet point (•)
-	trail = '~', -- Display trailing spaces as '.'
+	tab = '  ',
+	trail = '~', -- Trailing spaces
 }
 vim.opt.list = true
 

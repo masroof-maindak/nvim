@@ -34,5 +34,26 @@ return {
 				set_vim_settings = false,
 			},
 		},
+		{
+			"echasnovski/mini.indentscope",
+			version = false,
+			opts = {
+				draw = {
+					animation = function() return 0 end,
+				},
+				mappings = {
+					-- Select in visual mode
+					object_scope = "is",
+					object_scope_with_border = "as",
+
+					-- Move to scope border
+					goto_top = "[i",
+					goto_bottom = "]i",
+				},
+				options = {
+					try_as_border = true
+				},
+			},
+		},
 	},
 }
