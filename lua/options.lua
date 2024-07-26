@@ -74,3 +74,6 @@ vim.opt.list = true
 
 -- Disable cursor line highlight
 vim.o.cursorline = false
+
+-- Better scrolling
+vim.o.scrolloff = 6
