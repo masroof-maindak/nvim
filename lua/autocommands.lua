@@ -83,10 +83,9 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- Disable Indentscope in mini.starter
-local au_opts = {
+vim.api.nvim_create_autocmd("User", {
 	pattern = "MiniStarterOpened",
 	callback = function()
 		vim.b.miniindentscope_disable = true
 	end,
-}
-vim.api.nvim_create_autocmd("User", au_opts)
+})
