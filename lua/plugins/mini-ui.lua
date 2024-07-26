@@ -21,7 +21,8 @@ return {
 		"echasnovski/mini.starter",
 		version = false,
 		opts = {
-			footer = "\n      |\\      _,,,---,,_\nZZZzz /,`.-'`'    -.  ;-;;,_\n     |,4-  ) )-,_. ,\\ (  `'-'\n    '---''(_/--'  `-'\\_)",
+			footer =
+			"\n      |\\      _,,,---,,_\nZZZzz /,`.-'`'    -.  ;-;;,_\n     |,4-  ) )-,_. ,\\ (  `'-'\n    '---''(_/--'  `-'\\_)",
 
 			-- Default values with exception of '-' as I use it to open mini.files.
 			query_updaters = "abcdefghijklmnopqrstuvwxyz0123456789_.",
@@ -47,13 +48,22 @@ return {
 					local pathname = vim.bo.buftype == "terminal" and "%t"
 						or "%#MiniStatuslineFilename#" .. vim.fn.expand("%:t") .. (vim.bo.modified and " [+]" or "")
 
+					local devinfo = ""
+					if git ~= "" and diff ~= " -" then
+						devinfo = git .. " │" .. diff
+					elseif git ~= "" then
+						devinfo = git .. " "
+					elseif diff ~= " -" then
+						devinfo = diff
+					end
+
 					return MiniStatusline.combine_groups({
-						{ hl = mode_hl, strings = { mode:upper() } },
+						{ hl = mode_hl,                  strings = { mode:upper() } },
 						"%<", -- Mark general truncate point
 						{ hl = "MiniStatuslineFilename", strings = { pathname } },
 						"%=", -- End left alignment
-						{ hl = "MiniStatuslineDevinfo", strings = { git, "│", diff } },
-						{ hl = mode_hl, strings = { "%-2l,%-2v" } },
+						{ hl = "MiniStatuslineDevinfo", strings = { devinfo } },
+						{ hl = mode_hl,                 strings = { "%-2l,%-2v" } },
 					})
 				end,
 			},
