@@ -5,7 +5,7 @@ local servers = {
 	"bashls",
 	"dockerls",
 	"intelephense",
-	"lua_ls"
+	"lua_ls",
 }
 
 local on_attach = function(client, bufnr)
@@ -15,21 +15,21 @@ end
 local handlers = {
 	-- Generic settings for all servers
 	function(server_name)
-		require("lspconfig")[server_name].setup {
+		require("lspconfig")[server_name].setup({
 			on_attach = on_attach,
-		}
+		})
 	end,
 
 	["lua_ls"] = function()
 		local lspconfig = require("lspconfig")
-		lspconfig.lua_ls.setup {
+		lspconfig.lua_ls.setup({
 			settings = {
 				Lua = {
 					telemetry = { enable = false },
 					diagnostics = { globals = { "vim" } },
 				},
 			},
-		}
+		})
 	end,
 }
 
