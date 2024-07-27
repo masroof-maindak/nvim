@@ -1,6 +1,6 @@
--- Spellcheck + Wrap + Linebreak for Markdown files
+-- Spellcheck + Wrap + Linebreak for Markdown/Gitcommit files
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = "markdown",
+	pattern = { "markdown", "gitcommit" },
 	callback = function()
 		vim.opt_local.spell = true
 		vim.opt_local.wrap = true
