@@ -28,6 +28,12 @@ key("n", "<leader>pf", "<CMD>Pick files<CR>", { noremap = true, desc = "Select f
 key("n", "<leader>pb", "<CMD>Pick buffers<CR>", { noremap = true, desc = "Select buffer" })
 key("n", "<leader>gs", "<CMD>Pick grep live<CR>", { noremap = true, desc = "Live grep across files" })
 
+-- Version Control
+key("n", "go", "<CMD>lua MiniDiff.toggle_overlay()<CR>", { noremap = true, desc = "Toggle diff overlay" })
+key({ "n", "x" }, "<Leader>gs", "<CMD>lua MiniGit.show_at_cursor()<CR>", { desc = "Show Git history at cursor" })
+key({ "n", "v" }, "<Leader>gh", "<CMD>lua MiniGit.show_range_history()<CR>", { desc = "Git show range history" })
+key({ "n", "v" }, "<Leader>gd", "<CMD>lua MiniGit.show_diff_source()<CR>", { desc = "Git show diff source" })
+
 -- Move to the beginning/end of the line
 key("n", "L", "$", { noremap = true, silent = true })
 key("n", "H", "^", { noremap = true, silent = true })
