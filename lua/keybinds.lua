@@ -15,9 +15,8 @@ key("n", "<leader>w", ":w<CR>", { noremap = true, silent = true, desc = ":w" })
 
 -- File opener with '-'
 key("n", "-", function()
-	-- Starts file explorer at buffer if in one, else, directory from where nvim was opened
-	local path = vim.bo.buftype ~= "nofile" and vim.api.nvim_buf_get_name(0) or vim.uv.cwd()
-	MiniFiles.open(path)
+	-- Starts file explorer at buffer if in one, else; the directory from where nvim was opened
+	MiniFiles.open(vim.bo.buftype ~= "nofile" and vim.api.nvim_buf_get_name(0) or vim.uv.cwd())
 end, { desc = "Open file picker" })
 
 -- Delete current buffer
@@ -26,6 +25,7 @@ key("n", "<leader>bd", "<CMD>bd<CR>", { noremap = true, desc = "Delete buffer" }
 -- Mini.pick
 key("n", "<leader>pf", "<CMD>Pick files<CR>", { noremap = true, desc = "Select file" })
 key("n", "<leader>pb", "<CMD>Pick buffers<CR>", { noremap = true, desc = "Select buffer" })
+key("n", "<leader>ph", "<CMD>Pick help<CR>", { noremap = true, desc = "Select buffer" })
 key("n", "<leader>gs", "<CMD>Pick grep live<CR>", { noremap = true, desc = "Live grep across files" })
 
 -- Version Control
@@ -40,11 +40,9 @@ key("n", "H", "^", { noremap = true, silent = true })
 key("v", "L", "g_", { noremap = true, silent = true })
 key("v", "H", "^", { noremap = true, silent = true })
 
--- 'Tab' cycles through completion items
+-- Completion Items
 key("i", "<Tab>", [[pumvisible() ? "\<C-n>" : "\<Tab>"]], { expr = true })
 key("i", "<S-Tab>", [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]], { expr = true })
-
--- Approve completion item
 key("i", "<C-f>", [[pumvisible() ? "\<C-y>" : "\<C-f>"]], { expr = true })
 
 -- Window navigation with 'Ctrl-hjkl'
