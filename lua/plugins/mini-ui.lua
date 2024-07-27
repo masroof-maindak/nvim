@@ -94,9 +94,6 @@ return {
 				goto_top = "[i",
 				goto_bottom = "]i",
 			},
-			options = {
-				try_as_border = true,
-			},
 		},
 	},
 }
