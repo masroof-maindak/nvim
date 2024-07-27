@@ -30,7 +30,7 @@ key("n", "<leader>gs", "<CMD>Pick grep live<CR>", { noremap = true, desc = "Live
 
 -- Version Control
 key("n", "go", "<CMD>lua MiniDiff.toggle_overlay()<CR>", { noremap = true, desc = "Toggle diff overlay" })
-key({ "n", "x" }, "<Leader>gs", "<CMD>lua MiniGit.show_at_cursor()<CR>", { desc = "Show Git history at cursor" })
+key({ "n", "x" }, "<Leader>gc", "<CMD>lua MiniGit.show_at_cursor()<CR>", { desc = "Show Git history at cursor" })
 key({ "n", "v" }, "<Leader>gh", "<CMD>lua MiniGit.show_range_history()<CR>", { desc = "Git show range history" })
 key({ "n", "v" }, "<Leader>gd", "<CMD>lua MiniGit.show_diff_source()<CR>", { desc = "Git show diff source" })
 
