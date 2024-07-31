@@ -64,6 +64,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	pattern = {
 		"aerial",
 		"dashboard",
+		"man",
 		"help",
 		"lazy",
 		"leetcode.nvim",
