@@ -2,9 +2,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Use system clipboard
-vim.o.clipboard = "unnamedplus"
-
 -- Relative line numbers in gutter
 vim.o.relativenumber = true
 vim.o.number = true
