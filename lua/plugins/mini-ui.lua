@@ -80,7 +80,7 @@ return {
 		"echasnovski/mini.indentscope",
 		version = false,
 		opts = {
-			symbol = '┊',
+			symbol = "┊",
 			draw = {
 				animation = function()
 					return 0

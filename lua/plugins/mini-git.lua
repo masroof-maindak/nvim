@@ -5,7 +5,6 @@ return {
 			version = false,
 			main = "mini.git",
 			opts = {},
-			event = "VeryLazy",
 		},
 		{
 			"echasnovski/mini.diff",

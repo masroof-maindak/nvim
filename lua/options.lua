@@ -24,9 +24,6 @@ vim.opt.exrc = true
 -- Disable unsafe commands in local .nvimrc
 vim.opt.secure = true
 
--- Highlight current line
-vim.o.cursorline = true
-
 -- Ensure global statusline is always visible
 vim.o.laststatus = 3
 
