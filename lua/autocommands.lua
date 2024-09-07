@@ -58,36 +58,3 @@ vim.api.nvim_create_autocmd("TermEnter", {
 		vim.o.relativenumber = false
 	end,
 })
-
--- Disable indentscope in certain files
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = {
-		"aerial",
-		"dashboard",
-		"man",
-		"help",
-		"lazy",
-		"leetcode.nvim",
-		"mason",
-		"neo-tree",
-		"NvimTree",
-		"neogitstatus",
-		"notify",
-		"startify",
-		"toggleterm",
-		"Trouble",
-		"trouble",
-	},
-
-	callback = function()
-		vim.b.miniindentscope_disable = true
-	end,
-})
-
--- Disable Indentscope in mini.starter
-vim.api.nvim_create_autocmd("User", {
-	pattern = "MiniStarterOpened",
-	callback = function()
-		vim.b.miniindentscope_disable = true
-	end,
-})
