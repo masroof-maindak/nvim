@@ -38,10 +38,4 @@ return {
 			vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 		end,
 	},
-	{ -- Automatically install formatters
-		"zapling/mason-conform.nvim",
-		opts = {},
-		after = "conform.nvim",
-		event = "VeryLazy",
-	},
 }

@@ -2,7 +2,6 @@ local servers = {
 	"clangd",
 	"gopls",
 	"bashls",
-	"dockerls",
 	"intelephense",
 	"lua_ls",
 }
@@ -16,6 +15,27 @@ local handlers = {
 	function(server_name)
 		require("lspconfig")[server_name].setup({
 			on_attach = on_attach,
+		})
+	end,
+
+	-- Server-specific
+	["clangd"] = function()
+		local lspconfig = require("lspconfig")
+		lspconfig.clangd.setup({
+			cmd = {
+				"clangd",
+				"--background-index",
+				"--clang-tidy",
+				"--header-insertion=iwyu",
+				"--completion-style=detailed",
+				"--function-arg-placeholders",
+				"--fallback-style=llvm",
+			},
+			init_options = {
+				usePlaceholders = true,
+				completeUnimported = true,
+				clangdFileStatus = true,
+			},
 		})
 	end,
 
@@ -34,14 +54,15 @@ local handlers = {
 
 return {
 	{ -- LSP configuration
-		{ -- Download & Install
+		{ -- Download LSPs
 			"williamboman/mason.nvim",
+			cmd = "Mason",
 			opts = {
 				ui = {
 					icons = {
-						package_installed = "🗹",
-						package_pending = "➜",
-						package_uninstalled = "✗",
+						package_installed = "+",
+						package_pending = "»",
+						package_uninstalled = "×",
 					},
 				},
 			},
@@ -55,6 +76,5 @@ return {
 		},
 		-- Start LSP servers (wrapper over vim.lsp.start_client?)
 		{ "neovim/nvim-lspconfig", event = "BufReadPre" },
-		event = "VeryLazy",
 	},
 }

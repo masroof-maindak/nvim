@@ -17,36 +17,41 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Setup lazy.nvim
 require("lazy").setup({
+	rocks = {
+		enabled = false,
+	},
 	spec = {
 		{ import = "plugins" },
 	},
-	{
-		ui = {
-			icons = {
-				cmd = "⌘",
-				config = "🛠",
-				event = "📅",
-				ft = "📂",
-				init = "⚙",
-				keys = "🗝",
-				plugin = "🔌",
-				runtime = "💻",
-				require = "🌙",
-				source = "📄",
-				start = "🚀",
-				task = "📌",
-				lazy = "💤 ",
-			},
+	ui = {
+		icons = {
+			cmd = "$",
+			config = "[cfg]",
+			favorite = "[fvt]",
+			event = "[E]",
+			ft = "[ft]",
+			init = "[init]",
+			import = "[::]",
+			keys = "[key]",
+			plugin = "[plug]",
+			runtime = "[run]",
+			require = "[req]",
+			source = "[src]",
+			start = "[↑]",
+			task = "[task]",
+			lazy = "^",
+			loaded = "+",
+			not_loaded = "-",
 		},
-		performance = {
-			rtp = {
-				disabled_plugins = {
-					"gzip",
-					"tarPlugin",
-					"tohtml",
-					"tutor",
-					"zipPlugin",
-				},
+	},
+	performance = {
+		rtp = {
+			disabled_plugins = {
+				"gzip",
+				"tarPlugin",
+				"tohtml",
+				"tutor",
+				"zipPlugin",
 			},
 		},
 	},
