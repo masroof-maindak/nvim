@@ -17,6 +17,8 @@ return {
 			formatters_by_ft = {
 				c = { "clang-format" },
 				["c++"] = { "clang-format" },
+				css = { "prettierd", "prettier" },
+				scss = { "prettierd", "prettier" },
 				javascript = { "prettierd", "prettier" },
 				typescript = { "prettierd", "prettier" },
 				json = { "prettierd", "prettier" },

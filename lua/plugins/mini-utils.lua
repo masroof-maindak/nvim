@@ -26,8 +26,9 @@ return {
 		opts = {
 			lsp_completion = {
 				source_func = "omnifunc",
-				auto_setup = true,
+				auto_setup = false,
 			},
 		},
+		event = "VeryLazy",
 	},
 }
