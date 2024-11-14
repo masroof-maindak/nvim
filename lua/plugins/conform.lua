@@ -25,6 +25,7 @@ return {
 				lua = { "stylua" },
 				php = { "pretty-php" },
 				bash = { "shfmt" },
+				asm = { "asmfmt" },
 			},
 
 			format_on_save = nil,
