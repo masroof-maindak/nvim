@@ -7,7 +7,7 @@ return {
 			{
 				"<leader>f",
 				function()
-					require("conform").format({ async = true, lsp_format = "fallback", stop_after_first = true})
+					require("conform").format({ async = true, lsp_format = "fallback", stop_after_first = true })
 				end,
 				mode = "",
 				desc = "Format buffer",
@@ -26,6 +26,7 @@ return {
 				php = { "pretty-php" },
 				bash = { "shfmt" },
 				asm = { "asmfmt" },
+				rust = { "rustfmt" },
 			},
 
 			format_on_save = nil,

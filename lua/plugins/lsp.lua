@@ -2,12 +2,12 @@ local servers = {
 	"clangd",
 	"gopls",
 	"bashls",
-	"intelephense",
 	"lua_ls",
+	"rust_analyzer",
 }
 
 local on_attach = function(client, bufnr)
-	vim.api.nvim_exec_autocmds("LspAttach", { buffer = bufnr })
+	vim.api.nvim_exec_autocmds("LspAttach", { buffer = bufnr, data = { client_id = client.id } })
 end
 
 local handlers = {
@@ -45,36 +45,34 @@ local handlers = {
 			settings = {
 				Lua = {
 					telemetry = { enable = false },
-					diagnostics = { globals = { "vim" } },
+					diagnostics = { globals = { "vim", "MiniFiles", "MiniStatusline" } },
 				},
 			},
 		})
 	end,
 }
 
-return {
-	{ -- LSP configuration
-		{ -- Download LSPs
-			"williamboman/mason.nvim",
-			cmd = "Mason",
-			opts = {
-				ui = {
-					icons = {
-						package_installed = "+",
-						package_pending = "»",
-						package_uninstalled = "×",
-					},
+return { -- LSP configuration
+	{ -- Download LSPs
+		"williamboman/mason.nvim",
+		cmd = "Mason",
+		opts = {
+			ui = {
+				icons = {
+					package_installed = "+",
+					package_pending = "»",
+					package_uninstalled = "×",
 				},
 			},
 		},
-		{ -- Set up using hereinafter mentioned
-			"williamboman/mason-lspconfig.nvim",
-			opts = {
-				ensure_installed = servers,
-				handlers = handlers,
-			},
-		},
-		-- Start LSP servers (wrapper over vim.lsp.start_client?)
-		{ "neovim/nvim-lspconfig", event = "BufReadPre" },
 	},
+	{ -- Set up using hereinafter mentioned
+		"williamboman/mason-lspconfig.nvim",
+		opts = {
+			ensure_installed = servers,
+			handlers = handlers,
+		},
+	},
+	-- Start LSP servers (wrapper over vim.lsp.start_client?)
+	{ "neovim/nvim-lspconfig", event = "BufReadPre" },
 }
