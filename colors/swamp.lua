@@ -69,5 +69,5 @@ hi("DiagnosticFloatingInfo", { fg = palette.base0C, bg = palette.base00, attr = 
 hi("DiagnosticFloatingOk", { fg = palette.base0B, bg = palette.base00, attr = nil, sp = nil })
 hi("DiagnosticFloatingWarn", { fg = palette.base0E, bg = palette.base00, attr = nil, sp = nil })
 
-hi('MiniStatuslineDevinfo', { fg = palette.base05, bg = palette.base02, attr = nil, sp = nil })
-hi('MiniStatuslineFilename', { fg = palette.base06, bg = palette.base01, attr = nil, sp = nil })
+hi("MiniStatuslineDevinfo", { fg = palette.base05, bg = palette.base02, attr = nil, sp = nil })
+hi("MiniStatuslineFilename", { fg = palette.base06, bg = palette.base01, attr = nil, sp = nil })
