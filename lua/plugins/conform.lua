@@ -27,6 +27,7 @@ return {
 				bash = { "shfmt" },
 				asm = { "asmfmt" },
 				rust = { "rustfmt" },
+				python = { "black" },
 			},
 
 			format_on_save = nil,
