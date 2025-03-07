@@ -28,7 +28,10 @@ return {
 				source_func = "omnifunc",
 				auto_setup = false,
 			},
+			mappings = {
+				scroll_down = "<C-v>",
+				scroll_up = "<C-b>",
+			},
 		},
-		event = "VeryLazy",
 	},
 }

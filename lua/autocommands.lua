@@ -14,11 +14,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(event)
 		local client = vim.lsp.get_client_by_id(event.data.client_id)
 
+		-- Inlay hints
 		if client ~= nil and client.server_capabilities.inlayHintProvider then
 			vim.lsp.inlay_hint.enable(true)
 		end
 
-		-- LSP keymaps
+		-- Keymaps
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
 
@@ -31,7 +32,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename symbol" })
 		vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, { desc = "Show signature help" })
 
-		-- Enable completion with mini.completion
+		-- Mini.Completion support
 		vim.bo[event.buf].omnifunc = "v:lua.MiniCompletion.completefunc_lsp"
 	end,
 })

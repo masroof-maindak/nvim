@@ -7,7 +7,10 @@ local servers = {
 }
 
 local on_attach = function(client, bufnr)
-	vim.api.nvim_exec_autocmds("LspAttach", { buffer = bufnr, data = { client_id = client.id } })
+	vim.api.nvim_exec_autocmds("LspAttach", {
+		buffer = bufnr,
+		data = { client_id = client.id },
+	})
 end
 
 local handlers = {
