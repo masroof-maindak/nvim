@@ -45,8 +45,8 @@ vim.o.wrap = false
 vim.o.foldenable = true
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
-vim.wo.foldmethod = 'expr'
-vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.wo.foldmethod = "expr"
+vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 function _G.custom_fold_text()
 	local line = vim.fn.getline(vim.v.foldstart):gsub("^%s+", "")
 	local indent = vim.fn.indent(vim.v.foldstart)
@@ -61,8 +61,8 @@ vim.o.updatetime = 300
 
 -- Show hidden characters
 vim.opt.listchars = {
-	tab = '  ',
-	trail = '~', -- Trailing spaces
+	tab = "  ",
+	trail = "~", -- Trailing spaces
 }
 vim.opt.list = true
 

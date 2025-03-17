@@ -42,7 +42,7 @@ return {
 			set_vim_settings = false,
 			content = {
 				active = function()
-					local mode, mode_hl = MiniStatusline.section_mode({ trunc_width = 50 })
+					local mode, mode_hl = MiniStatusline.section_mode({ trunc_width = 512 })
 					local git = MiniStatusline.section_git({ trunc_width = 75, icon = "" })
 					local diff = MiniStatusline.section_diff({ trunc_width = 75, icon = "" })
 					local diagnostics = MiniStatusline.section_diagnostics({
@@ -62,7 +62,7 @@ return {
 					end
 
 					return MiniStatusline.combine_groups({
-						{ hl = mode_hl, strings = { mode:upper() } },
+						{ hl = mode_hl, strings = { mode } },
 						{ hl = "MiniStatuslineDevinfo", strings = { diagnostics } },
 						"%<", -- Mark general truncate point
 						{ hl = "MiniStatuslineFilename", strings = { pathname } },
