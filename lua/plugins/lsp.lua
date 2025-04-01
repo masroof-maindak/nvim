@@ -4,6 +4,7 @@ local servers = {
 	"bashls",
 	"lua_ls",
 	"rust_analyzer",
+	"basedpyright",
 }
 
 local on_attach = function(client, bufnr)
@@ -50,6 +51,19 @@ local handlers = {
 				Lua = {
 					telemetry = { enable = false },
 					diagnostics = { globals = { "vim", "MiniFiles", "MiniStatusline" } },
+				},
+			},
+		})
+	end,
+
+	["basedpyright"] = function()
+		local lspconfig = require("lspconfig")
+		lspconfig.basedpyright.setup({
+			settings = {
+				basedpyright = {
+					analysis = {
+						typeCheckingMode = "basic",
+					},
 				},
 			},
 		})
