@@ -19,6 +19,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			vim.lsp.inlay_hint.enable(true)
 		end
 
+		-- Disable Ruff's hover in favor of Pyright
+		if client.name == "ruff" then
+			client.server_capabilities.hoverProvider = false
+		end
+
 		-- Keymaps
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
