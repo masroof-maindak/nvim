@@ -6,6 +6,7 @@ local servers = {
 	"basedpyright",
 	"rust_analyzer",
 	"ruff",
+	"tsserver",
 }
 
 local on_attach = function(client, bufnr)
@@ -14,6 +15,8 @@ local on_attach = function(client, bufnr)
 		data = { client_id = client.id },
 	})
 end
+
+-- Additional configurations for each client other than the defaults
 
 vim.lsp.config("clangd", {
 	cmd = {
@@ -56,4 +59,3 @@ for _, server in ipairs(servers) do
 	vim.lsp.config(server, { on_attach = on_attach })
 	vim.lsp.enable(server)
 end
-
