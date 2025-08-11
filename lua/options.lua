@@ -25,7 +25,7 @@ vim.opt.exrc = true
 vim.opt.secure = true
 
 -- Ensure global statusline is always visible
-vim.o.laststatus = 3
+vim.o.laststatus = 2
 
 -- Always show sign column
 vim.o.signcolumn = "auto"

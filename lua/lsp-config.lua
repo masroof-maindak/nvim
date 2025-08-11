@@ -6,7 +6,7 @@ local servers = {
 	"basedpyright",
 	"rust_analyzer",
 	"ruff",
-	"tsserver",
+	"vtsls",
 }
 
 local on_attach = function(client, bufnr)
@@ -33,7 +33,7 @@ vim.lsp.config("clangd", {
 		completeUnimported = true,
 		clangdFileStatus = true,
 	},
-	filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "hpp" },
+	filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "hpp" }, -- Remove proto from default
 })
 
 vim.lsp.config("lua_ls", {
