@@ -1,32 +1,38 @@
--- return {
--- 	"nvim-treesitter/nvim-treesitter",
--- 	event = { "BufReadPost", "BufNewFile" },
--- 	build = ":TSUpdate",
--- 	opts = {
--- 		ensure_installed = {
--- 			"lua",
--- 			"vimdoc",
--- 			"python",
--- 			"cpp",
--- 			"c",
--- 			"go",
--- 			"javascript",
--- 			"php",
--- 			"markdown",
--- 			"json",
--- 			"yaml",
--- 			"css",
--- 			"dockerfile",
--- 		},
--- 		auto_install = true,
--- 		highlight = { enable = true },
--- 		indent = { enable = true },
--- 	},
--- }
-
 return {
 	"nvim-treesitter/nvim-treesitter",
 	lazy = false,
 	branch = "main",
 	build = ":TSUpdate",
+	config = function()
+		require("nvim-treesitter").setup()
+
+		local ensure_installed = {
+			"bash",
+			"c",
+			"cpp",
+			"css",
+			"devicetree",
+			"dockerfile",
+			"gitignore",
+			"go",
+			"html",
+			"javascript",
+			"javascript",
+			"json",
+			"kdl",
+			"lua",
+			"make",
+			"markdown",
+			"markdown_inline",
+			"python",
+			"rust",
+			"toml",
+			"typescript",
+			"vim",
+			"vimdoc",
+			"yaml",
+		}
+
+		require("nvim-treesitter").install(ensure_installed)
+	end,
 }
