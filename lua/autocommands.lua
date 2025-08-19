@@ -32,9 +32,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "[[", vim.diagnostic.goto_next, { desc = "Go to next diagnostic" })
 		vim.keymap.set("n", "]]", vim.diagnostic.goto_prev, { desc = "Go to prev diagnostic" })
 
-		vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, { desc = "Show code actions" })
-		vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "Show references" })
-		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename symbol" })
 		vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, { desc = "Show signature help" })
 
 		-- Mini.Completion support
