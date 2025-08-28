@@ -1,6 +1,6 @@
 return {
 	{ -- Hex code & pattern highlights
-		"echasnovski/mini.hipatterns",
+		"nvim-mini/mini.hipatterns",
 		version = false,
 		config = function()
 			local hipatterns = require("mini.hipatterns")
@@ -18,7 +18,7 @@ return {
 		event = "VeryLazy",
 	},
 	{
-		"echasnovski/mini.starter",
+		"nvim-mini/mini.starter",
 		version = false,
 		opts = {
 			-- Sleeping car
@@ -29,13 +29,13 @@ return {
 		},
 	},
 	{
-		"echasnovski/mini.tabline",
+		"nvim-mini/mini.tabline",
 		version = false,
 		opts = { tabpage_section = "right", show_icons = false },
 		event = "VeryLazy",
 	},
 	{
-		"echasnovski/mini.statusline",
+		"nvim-mini/mini.statusline",
 		version = false,
 		opts = {
 			use_icons = false,

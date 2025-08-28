@@ -1,14 +1,14 @@
 return {
 	{
 		{
-			"echasnovski/mini-git",
+			"nvim-mini/mini-git",
 			version = false,
 			event = "VeryLazy",
 			main = "mini.git",
 			opts = {},
 		},
 		{
-			"echasnovski/mini.diff",
+			"nvim-mini/mini.diff",
 			version = false,
 			event = "VeryLazy",
 			opts = {

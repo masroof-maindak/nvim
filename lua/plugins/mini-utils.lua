@@ -1,6 +1,6 @@
 return {
 	{
-		"echasnovski/mini.files",
+		"nvim-mini/mini.files",
 		version = false,
 		opts = {
 			content = { prefix = function() end },
@@ -8,7 +8,7 @@ return {
 		event = "VeryLazy",
 	},
 	{
-		"echasnovski/mini.pick",
+		"nvim-mini/mini.pick",
 		version = false,
 		config = function()
 			local pick = require("mini.pick")
@@ -21,7 +21,7 @@ return {
 		event = "VeryLazy",
 	},
 	{ -- LSP Completion
-		"echasnovski/mini.completion",
+		"nvim-mini/mini.completion",
 		version = false,
 		opts = {
 			lsp_completion = {

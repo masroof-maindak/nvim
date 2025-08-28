@@ -1,13 +1,13 @@
 return {
-	{ "echasnovski/mini.comment", version = false, opts = {}, event = "VeryLazy" },
+	{ "nvim-mini/mini.comment", version = false, opts = {}, event = "VeryLazy" },
 	{
-		"echasnovski/mini.surround",
+		"nvim-mini/mini.surround",
 		version = false,
 		opts = { highlight_duration = 1000 },
 		event = "VeryLazy",
 	},
 	{
-		"echasnovski/mini.jump",
+		"nvim-mini/mini.jump",
 		version = false,
 		opts = { delay = { idle_stop = 5000 } },
 		event = "VeryLazy",
