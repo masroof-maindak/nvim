@@ -1,6 +1,5 @@
 require("options")
 require("keybinds")
 require("bootstrap")
-require("coloropts")
 require("lsp-config")
 require("autocommands")

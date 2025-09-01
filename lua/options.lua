@@ -38,6 +38,9 @@ vim.o.ignorecase = true
 vim.o.infercase = true
 vim.o.smartcase = true
 
+-- Usable netrw
+vim.g.netrw_bufsettings = "noma nomod rnu nu nobl nowrap ro"
+
 -- Line wrap
 vim.o.wrap = false
 
