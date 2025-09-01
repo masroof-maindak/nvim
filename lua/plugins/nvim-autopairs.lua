@@ -1,16 +1,13 @@
 return {
-	"windwp/nvim-autopairs",
-	event = "InsertEnter",
-	config = function()
-		local np = require("nvim-autopairs")
-		local Rule = require("nvim-autopairs.rule")
-		local cond = require("nvim-autopairs.conds")
+	-- nvim-autopairs doesn't allow you to 'skip over' an auto-closed
+	-- pair with the same character.
 
-		np.setup({})
-
-		np.add_rules({
-			Rule("*", "*", { "markdown" }):with_pair(cond.not_before_regex("\n")),
-			Rule("_", "_", { "markdown" }):with_pair(cond.before_regex("%s")),
-		})
-	end,
+	"altermo/ultimate-autopair.nvim",
+	event = { "InsertEnter", "CmdlineEnter" },
+	branch = "v0.6",
+	opts = {
+		{ "*", "*", ft = { "markdown" }, multiline = false },
+		{ "_", "_", ft = { "markdown" }, multiline = false },
+		{ "**", "**", ft = { "markdown" }, multiline = false },
+	},
 }
