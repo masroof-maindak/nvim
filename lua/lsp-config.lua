@@ -1,11 +1,12 @@
 local servers = {
+	"basedpyright",
+	"bashls",
 	"clangd",
 	"gopls",
-	"bashls",
 	"lua_ls",
-	"basedpyright",
-	"rust_analyzer",
+	"neocmakelsp",
 	"ruff",
+	"rust_analyzer",
 	"vtsls",
 }
 
