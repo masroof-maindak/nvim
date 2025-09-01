@@ -29,6 +29,7 @@ return {
 				asm = { "asmfmt" },
 				rust = { "rustfmt" },
 				python = { "ruff format" },
+				kdl = { "kdlfmt" },
 			},
 
 			format_on_save = nil,
