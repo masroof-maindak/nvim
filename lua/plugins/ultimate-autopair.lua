@@ -9,5 +9,6 @@ return {
 		{ "*", "*", ft = { "markdown" }, multiline = false },
 		{ "_", "_", ft = { "markdown" }, multiline = false },
 		{ "**", "**", ft = { "markdown" }, multiline = false },
+		{ '"""', '"""', insta_newline = true, ft = { "python" } },
 	},
 }
