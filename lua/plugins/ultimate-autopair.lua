@@ -10,5 +10,8 @@ return {
 		{ "_", "_", ft = { "markdown" }, multiline = false },
 		{ "**", "**", ft = { "markdown" }, multiline = false },
 		{ '"""', '"""', insta_newline = true, ft = { "python" } },
+		config_internal_pairs = {
+			{ "[", "]", ft = { "markdown" }, treesitter = false },
+		},
 	},
 }
