@@ -6,6 +6,7 @@ return {
 	event = { "InsertEnter", "CmdlineEnter" },
 	branch = "v0.6",
 	opts = {
+		{ "$", "$", ft = { "typst" }, multiline = false },
 		{ "*", "*", ft = { "markdown" }, multiline = false },
 		{ "_", "_", ft = { "markdown" }, multiline = false },
 		{ "**", "**", ft = { "markdown" }, multiline = false },

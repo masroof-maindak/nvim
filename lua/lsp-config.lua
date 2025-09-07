@@ -7,6 +7,7 @@ local servers = {
 	"neocmakelsp",
 	"ruff",
 	"rust_analyzer",
+	"tinymist",
 	"vtsls",
 }
 
