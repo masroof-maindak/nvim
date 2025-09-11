@@ -19,6 +19,7 @@ return {
 				bash = { "shfmt" },
 				c = { "clang-format" },
 				["c++"] = { "clang-format" },
+				cmake = { "gersemi" },
 				css = { "prettier" },
 				html = { "prettier" },
 				javascript = { "prettier" },
