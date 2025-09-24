@@ -8,6 +8,14 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
+-- Vertical column separator for Typst
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "typst" },
+	callback = function()
+		-- TODO: `:set colorcolumn=80`
+	end,
+})
+
 -- LSP
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("user_lsp_attach", { clear = true }),
@@ -24,6 +32,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			client.server_capabilities.hoverProvider = false
 		end
 
+		-- TODO: move these to keybinds instead
 		-- Keymaps
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
@@ -35,6 +44,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, { desc = "Show signature help" })
 
 		-- Mini.Completion support
+		-- CHECK: should this be event.buffer? Peep `lsp-config.lua`.
 		vim.bo[event.buf].omnifunc = "v:lua.MiniCompletion.completefunc_lsp"
 	end,
 })
