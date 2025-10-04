@@ -1,53 +1,59 @@
+local o = vim.o
+local opt = vim.opt
+
 -- Set space as leader key
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Relative line numbers in gutter
-vim.o.relativenumber = true
-vim.o.number = true
+o.relativenumber = true
+o.number = true
 
 -- Number of spaces per tab
-vim.o.tabstop = 4
+o.tabstop = 4
 
 -- Number of spaces to use for indents with >>, << and ==
-vim.o.shiftwidth = 4
+o.shiftwidth = 4
+
+-- Convert tabs to spaces
+o.expandtab = true
 
 -- 24 bit colours
-vim.o.termguicolors = true
+o.termguicolors = true
 
 -- Enable mouse support for all modes
-vim.o.mouse = "a"
+o.mouse = "a"
 
 -- Use local .nvimrc if it exists
-vim.opt.exrc = true
+opt.exrc = true
 
 -- Disable unsafe commands in local .nvimrc
-vim.opt.secure = true
+opt.secure = true
 
 -- Ensure global statusline is always visible
-vim.o.laststatus = 2
+o.laststatus = 2
 
 -- Always show sign column
-vim.o.signcolumn = "auto"
+o.signcolumn = "auto"
 
 -- Undo files
-vim.opt.undofile = true
+opt.undofile = true
 
 -- Case insensitive searching UNLESS /C or capital in search
-vim.o.ignorecase = true
-vim.o.infercase = true
-vim.o.smartcase = true
+o.ignorecase = true
+o.infercase = true
+o.smartcase = true
 
 -- Usable netrw
 vim.g.netrw_bufsettings = "noma nomod rnu nu nobl nowrap ro"
 
 -- Line wrap
-vim.o.wrap = false
+o.wrap = false
 
 -- Folding
-vim.o.foldenable = true
-vim.o.foldlevel = 99
-vim.o.foldlevelstart = 99
+o.foldenable = true
+o.foldlevel = 99
+o.foldlevelstart = 99
 vim.wo.foldmethod = "expr"
 vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 function _G.custom_fold_text()
@@ -55,22 +61,22 @@ function _G.custom_fold_text()
 	local indent = vim.fn.indent(vim.v.foldstart)
 	return string.rep(" ", indent) .. line
 end
-vim.o.foldtext = "v:lua.custom_fold_text()"
+o.foldtext = "v:lua.custom_fold_text()"
 
 -- Hide fold and and end-of-buffer default chars
-vim.o.fillchars = "eob: ,fold: "
+o.fillchars = "eob: ,fold: "
 
-vim.o.updatetime = 300
+o.updatetime = 300
 
 -- Show hidden characters
-vim.opt.listchars = {
+opt.listchars = {
 	tab = "  ",
 	trail = "~", -- Trailing spaces
 }
-vim.opt.list = true
+opt.list = true
 
 -- Disable cursor line highlight
-vim.o.cursorline = false
+o.cursorline = false
 
 -- Better scrolling
-vim.o.scrolloff = 6
+o.scrolloff = 6
