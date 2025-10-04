@@ -56,6 +56,16 @@ map("i", "<C-f>", [[pumvisible() ? "\<C-y>" : "\<C-f>"]], { expr = true })
 map("i", "<Tab>", [[pumvisible() ? "\<C-n>" : "\<Tab>"]], { expr = true })
 map("i", "<S-Tab>", [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]], { expr = true })
 
+-- LSP
+map("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+map("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
+
+map("n", "<leader>d", vim.diagnostic.open_float, { desc = "Open diagnostics float" })
+map("n", "[[", vim.diagnostic.goto_next, { desc = "Go to next diagnostic" })
+map("n", "]]", vim.diagnostic.goto_prev, { desc = "Go to prev diagnostic" })
+
+map("i", "<C-h>", vim.lsp.buf.signature_help, { desc = "Show signature help" })
+
 -- Window navigation
 map("n", "<C-h>", "<C-w>h", { noremap = true, silent = true })
 map("n", "<C-j>", "<C-w>j", { noremap = true, silent = true })

@@ -14,19 +14,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			client.server_capabilities.hoverProvider = false
 		end
 
-		-- TODO: move these to keybinds instead
-		-- Keymaps
-		vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
-		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
-
-		vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Open diagnostics float" })
-		vim.keymap.set("n", "[[", vim.diagnostic.goto_next, { desc = "Go to next diagnostic" })
-		vim.keymap.set("n", "]]", vim.diagnostic.goto_prev, { desc = "Go to prev diagnostic" })
-
-		vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, { desc = "Show signature help" })
-
-		-- Mini.Completion support
-		-- CHECK: should this be event.buffer? Peep `lsp-config.lua`.
 		vim.bo[event.buf].omnifunc = "v:lua.MiniCompletion.completefunc_lsp"
 	end,
 })
