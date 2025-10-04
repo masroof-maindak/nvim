@@ -1,21 +1,3 @@
--- Spellcheck + Wrap + Linebreak for Markdown/Gitcommit files
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "markdown", "gitcommit" },
-	callback = function()
-		vim.opt_local.spell = true
-		vim.opt_local.wrap = true
-		vim.opt_local.linebreak = true
-	end,
-})
-
--- Vertical column separator for Typst
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "typst" },
-	callback = function()
-		-- TODO: `:set colorcolumn=80`
-	end,
-})
-
 -- LSP
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("user_lsp_attach", { clear = true }),
