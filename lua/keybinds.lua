@@ -2,21 +2,22 @@ local map = vim.keymap.set
 
 -- Basic
 map("i", "jk", "<Esc>", { noremap = true, silent = true, desc = "Exit insert mode" })
-map("n", "<C-s>", ":w<CR>", { noremap = true, silent = true, desc = ":w" })
-map("n", "<C-q>", ":qa<CR>", { noremap = true, silent = true, desc = ":qa" })
-map("n", "<leader>q", ":q<CR>", { noremap = true, silent = true, desc = ":q" })
-map("n", "<leader>w", ":w<CR>", { noremap = true, silent = true, desc = ":w" })
+map("n", "<C-s>", "<CMD>w<CR>", { noremap = true, silent = true, desc = ":w" })
+map("n", "<C-q>", "<CMD>qa<CR>", { noremap = true, silent = true, desc = ":qa" })
+map("n", "<leader>q", "<CMD>q<CR>", { noremap = true, silent = true, desc = ":q" })
+map("n", "<leader>w", "<CMD>w<CR>", { noremap = true, silent = true, desc = ":w" })
+map("n", "<leader>kt", "<CMD>Themery<CR>", { noremap = true, desc = "Colour theme picker" })
 
 -- Misc
 map("v", "<", "<gv", { noremap = true, silent = true })
 map("v", ">", ">gv", { noremap = true, silent = true })
-map("n", "<Esc>", ":noh<CR><Esc>", { noremap = true, silent = true, desc = "Remove highlights" })
+map("n", "<Esc>", "<CMD>noh<CR><Esc>", { noremap = true, silent = true, desc = "Remove highlights" })
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { noremap = true, silent = true, desc = "Exit insert mode in terminal" })
 
 -- Buffer Management
-map("n", "<leader>bd", ":bd<CR>", { noremap = true, desc = "Delete buffer" })
-map("n", "<Tab>", ":bn<CR>", { noremap = true, silent = true })
-map("n", "<S-Tab>", ":bp<CR>", { noremap = true, silent = true })
+map("n", "<leader>bd", "<CMD>bd<CR>", { noremap = true, desc = "Delete buffer" })
+map("n", "<Tab>", "<CMD>bn<CR>", { noremap = true, silent = true })
+map("n", "<S-Tab>", "<CMD>bp<CR>", { noremap = true, silent = true })
 
 -- Mini.files
 local function open_mini_files(arg)
