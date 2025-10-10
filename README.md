@@ -1,8 +1,13 @@
-![image](https://github.com/user-attachments/assets/680862ee-f87d-4c92-98d7-0f927f2014c9)
+# nvim
 
-### Installation
+![starter](.github/assets/starter.png)
+![screenshot](.github/assets/nuktah.png)
 
-NOTE: All the relevant tools will be installed by Mason automatically but you need certain system packages, e.g `go`, `npm`, etc.; these can be installed trivially via Scoop or any Linux package manager.
+## Installation
+
+NOTE: All the relevant tooling will be installed by Mason automatically but you need certain system
+packages, e.g `go`, `npm`, etc.; these can be installed trivially via Scoop or any Linux package
+manager.
 
 #### Linux
 
@@ -17,5 +22,5 @@ mkdir $env:LOCALAPPDATA\nvim
 cd $env:LOCALAPPDATA\nvim
 git clone https://github.com/masroof-maindak/nvim.git .
 scoop bucket add extras
-scoop install neovide
+scoop install neovim neovide
 ```
