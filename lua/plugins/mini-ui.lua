@@ -1,3 +1,8 @@
+local get_bufname = function()
+	return vim.bo.buftype == "terminal" and "%t"
+		or "%#MiniStatuslineFilename#" .. vim.fn.expand("%:t") .. (vim.bo.modified and " [+]" or "")
+end
+
 return {
 	{ -- Hex code & pattern highlights
 		"nvim-mini/mini.hipatterns",
@@ -41,6 +46,16 @@ return {
 			use_icons = false,
 			set_vim_settings = false,
 			content = {
+				inactive = function()
+					local bufname = get_bufname()
+					return MiniStatusline.combine_groups({
+						"%<", -- Mark general truncate point
+						{ hl = "MiniStatuslineFilename", strings = { bufname } },
+						"%=", -- End left alignment
+						{ strings = { "%-2l,%-2v" } },
+					})
+				end,
+
 				active = function()
 					local mode, mode_hl = MiniStatusline.section_mode({ trunc_width = 512 })
 					local git = MiniStatusline.section_git({ trunc_width = 75, icon = "" })
@@ -51,8 +66,7 @@ return {
 						signs = { ERROR = "!", WARN = "?", INFO = "@", HINT = "*" },
 					})
 
-					local pathname = vim.bo.buftype == "terminal" and "%t"
-						or "%#MiniStatuslineFilename#" .. vim.fn.expand("%:t") .. (vim.bo.modified and " [+]" or "")
+					local bufname = get_bufname()
 
 					local devinfo
 					if git == "" then
@@ -65,7 +79,7 @@ return {
 						{ hl = mode_hl, strings = { mode } },
 						{ hl = "MiniStatuslineDevinfo", strings = { diagnostics } },
 						"%<", -- Mark general truncate point
-						{ hl = "MiniStatuslineFilename", strings = { pathname } },
+						{ hl = "MiniStatuslineFilename", strings = { bufname } },
 						"%=", -- End left alignment
 						{ hl = "MiniStatuslineDevinfo", strings = { devinfo } },
 						{ hl = mode_hl, strings = { "%-2l,%-2v" } },
