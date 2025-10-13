@@ -18,6 +18,9 @@ map("t", "<Esc><Esc>", "<C-\\><C-n>", { noremap = true, silent = true, desc = "E
 map("n", "<leader>bd", "<CMD>bd<CR>", { noremap = true, desc = "Delete buffer" })
 map("n", "<Tab>", "<CMD>bn<CR>", { noremap = true, silent = true })
 map("n", "<S-Tab>", "<CMD>bp<CR>", { noremap = true, silent = true })
+map("n", "<leader>bc", function()
+	MiniBufremove.delete()
+end, { noremap = true, desc = "Intelligently close buffer" })
 
 -- Mini.files
 local function open_mini_files(arg)
