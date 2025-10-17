@@ -27,7 +27,7 @@ return {
 				kdl = { "kdlfmt" },
 				lua = { "stylua" },
 				php = { "pretty-php" },
-				python = { "ruff format" },
+				python = { "isort", "ruff format" },
 				rust = { "rustfmt" },
 				scss = { "prettier" },
 				typescript = { "prettier" },
