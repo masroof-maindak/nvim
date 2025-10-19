@@ -7,6 +7,8 @@ map("n", "<C-q>", "<CMD>qa<CR>", { noremap = true, silent = true, desc = ":qa" }
 map("n", "<leader>q", "<CMD>q<CR>", { noremap = true, silent = true, desc = ":q" })
 map("n", "<leader>w", "<CMD>w<CR>", { noremap = true, silent = true, desc = ":w" })
 map("n", "<leader>kt", "<CMD>Themery<CR>", { noremap = true, desc = "Colour theme picker" })
+map("n", "<leader>l", "<CMD>Lazy<CR>", { noremap = true, desc = "Lazy" })
+map("n", "<leader>m", "<CMD>Mason<CR>", { noremap = true, desc = "Mason" })
 
 -- Misc
 map("v", "<", "<gv", { noremap = true, silent = true })
