@@ -42,7 +42,7 @@ vim.lsp.config("lua_ls", {
 	settings = {
 		Lua = {
 			telemetry = { enable = false },
-			diagnostics = { globals = { "vim", "MiniFiles", "MiniStatusline" } },
+			diagnostics = { globals = { "vim", "MiniFiles", "MiniStatusline", "MiniBufremove" } },
 		},
 	},
 })
