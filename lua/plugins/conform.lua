@@ -17,8 +17,8 @@ return {
 			formatters_by_ft = {
 				asm = { "asmfmt" },
 				bash = { "shfmt" },
-				c = { "clang-format" },
 				["c++"] = { "clang-format" },
+				c = { "clang-format" },
 				cmake = { "gersemi" },
 				css = { "prettier" },
 				html = { "prettier" },

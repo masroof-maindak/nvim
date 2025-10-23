@@ -7,8 +7,8 @@ return {
 	config = function()
 		local lint = require("lint")
 		lint.linters_by_ft = {
-			c = { "clangtidy" },
 			["c++"] = { "clangtidy" },
+			c = { "clangtidy" },
 			fish = { "fish" },
 			go = { "golangci-lint" },
 			python = { "ruff" },
