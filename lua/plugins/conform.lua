@@ -7,7 +7,7 @@ return {
 			{
 				"<leader>f",
 				function()
-					require("conform").format({ async = true, lsp_format = "fallback", stop_after_first = true })
+					require("conform").format({ async = true, lsp_format = "fallback" })
 				end,
 				mode = "",
 				desc = "Format buffer",
@@ -27,7 +27,7 @@ return {
 				kdl = { "kdlfmt" },
 				lua = { "stylua" },
 				php = { "pretty-php" },
-				python = { "ruff_format", "ruff_organize_imports" },
+				python = { "ruff_organize_imports", "ruff_format", stop_after_first = false },
 				rust = { "rustfmt" },
 				scss = { "prettier" },
 				typescript = { "prettier" },
