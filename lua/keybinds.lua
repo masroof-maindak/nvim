@@ -28,6 +28,13 @@ map("n", "<leader>bc", function()
 	MiniBufremove.delete()
 end, { noremap = true, desc = "Intelligently close buffer" })
 
+-- Update Neovim's CWD to that of the current file
+map("n", "<Leader>cd", function()
+	local dir = vim.fn.expand("%:p:h")
+	vim.cmd("cd " .. dir)
+	print("Working directory: " .. vim.fn.getcwd())
+end, { silent = true })
+
 -- Mini.files
 local function open_mini_files(arg)
 	if not MiniFiles.close() then
