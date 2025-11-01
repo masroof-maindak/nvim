@@ -6,8 +6,8 @@ map("n", "<C-s>", "<CMD>w<CR>", { noremap = true, silent = true, desc = ":w" })
 map("n", "<C-q>", "<CMD>qa<CR>", { noremap = true, silent = true, desc = ":qa" })
 map("n", "<leader>q", "<CMD>q<CR>", { noremap = true, silent = true, desc = ":q" })
 map("n", "<leader>w", "<CMD>w<CR>", { noremap = true, silent = true, desc = ":w" })
-map("n", "J", "5j", { noremap = true, silent = true, desc = "Big down" })
-map("n", "K", "5k", { noremap = true, silent = true, desc = "Big up" })
+map("n", "<M-j>", "5j", { noremap = true, silent = true, desc = "Big down" })
+map("n", "<M-k>", "5k", { noremap = true, silent = true, desc = "Big up" })
 
 -- Plugin menus
 map("n", "<leader>kt", "<CMD>Themery<CR>", { noremap = true, desc = "Colour theme picker" })
