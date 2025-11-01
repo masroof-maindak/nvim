@@ -26,6 +26,7 @@ return {
 				json = { "prettier" },
 				kdl = { "kdlfmt" },
 				lua = { "stylua" },
+				markdown = { "prettier" },
 				php = { "pretty-php" },
 				python = { "ruff_organize_imports", "ruff_format", stop_after_first = false },
 				rust = { "rustfmt" },
